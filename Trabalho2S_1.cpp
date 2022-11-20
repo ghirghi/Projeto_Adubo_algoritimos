@@ -129,7 +129,7 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 			//LISTAR;
 			printf("Selecione a opcao da lista abaixo digitando o numero da opcao: \n");
 			while (qual_func < 1) {
-				printf("Opcao 1: exibir fosforo \n Opcao 2: exibir taxa \n Opcao 3: exibir_total \n Opcao 4: exibir nomes  \n Opcao 5: exibir tudo \n  \n");
+				printf("Opcao 1: exibir fosforo \n Opcao 2: exibir taxa \n Opcao 3: exibir_total \n Opcao 4: exibir nomes  \n Opcao 5: exibir tudo \n Opcao 6: sair. \n  \n");
 				scanf("%d", &qual_func);
 
 				if (qual_func == 1) {
@@ -157,10 +157,11 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 
 					qual_func = 0;
 				}
+				//TIRAR
 				else if (qual_func == 4) {
 					//exibir nomes
 					for (int elemento_nome = 0; elemento_nome < numero_limitador; elemento_nome++) {
-						printf("	O %d nome e  : %d\n", elemento_nome + 1, areas[elemento_nome]);
+						printf("	O %d nome e  : %s\n", elemento_nome + 1, areas[elemento_nome]);
 					}
 
 					qual_func = 0;
@@ -168,12 +169,16 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 				else if (qual_func == 5) {
 					//exibir tudo
 					for (int elemento_tudo = 0; elemento_tudo < numero_limitador; elemento_tudo++) {
-						printf("	A %d area possui %d de fosforo, iremos adubar %d de kg/ha, %d kg  de : %d\n", elemento_tudo + 1,fosforo[elemento_tudo], resultados[elemento_tudo], total_adubo[elemento_tudo]);
+						printf("	A %d area possui %d de fosforo, iremos adubar %d de kg/hectares, e vai usar %d kg \n", elemento_tudo + 1,fosforo[elemento_tudo], resultados[elemento_tudo], total_adubo[elemento_tudo]);
 					}
 
 					qual_func = 0;
 				}
+				else if (qual_func == 6) {
 
+
+					exit(0);
+				}
 				else {
 					//Tratamento de erro caso o valor seja incorreto
 					//invalido
@@ -218,11 +223,13 @@ int main() {
 
 
 	//Início da interação com o usuário
+	printf("***************************************************************************\n");
 
-	printf("Usuario digite a quantia de areas que deseja trabalhar: \n");
+	printf("***************************************************************************\n");
+	printf("Ola!!! digite a quantia de areas que deseja trabalhar: \n");
 	scanf("%d", &numero_limitador);
 
-	printf("Insira valores de acordo com a ordem: \n 1: Areas\n 2: Valor de P\n 3: Tamanho\n\n\n\n\n. ");
+	printf("Insira valores de acordo com a ordem: \n 1: nome da area\n 2: Tamanho\n 3: valor de fosforo\n\n\n\n\n. ");
 	while (contador < numero_limitador) {
 
 		printf("Informe o nome da area %d:\n ", contador + 1);

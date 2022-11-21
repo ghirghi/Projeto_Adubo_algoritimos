@@ -67,7 +67,6 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 				exibir_fosforo()
 				exibir_taxa()
 				exibir_total()
-				exibir_nomes()
 				exibir_tudo()
 
 
@@ -121,13 +120,14 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 			//LISTAR;
 			printf("Selecione a opcao da lista abaixo digitando o numero da opcao: \n");
 			while (qual_func < 1) {
-				printf("Opcao 1: exibir fosforo \n Opcao 2: exibir taxa \n Opcao 3: exibir_total  \n Opcao 4: exibir tudo \n Opcao 5: sair. \n  \n");
+				printf("O que deseja fazer?\n Opcao 1: exibir fosforo \n Opcao 2: exibir taxa \n Opcao 3: exibir_total  \n Opcao 4: exibir tudo \n Opcao 5: sair. \n  \n");
 				scanf("%d", &qual_func);
 
 				if (qual_func == 1) {
 					//exibir fosforo
 					for (int elemento_fosforo = 0; elemento_fosforo < numero_limitador; elemento_fosforo++) {
 						printf("	O %d valor de fosforo e : %d\n", elemento_fosforo + 1, fosforo[elemento_fosforo]);
+						
 					}
 
 
@@ -149,16 +149,7 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 
 					qual_func = 0;
 				}
-				/*
-				else if (qual_func == 4) {
-					//exibir nomes
-					for (int elemento_nome = 0; elemento_nome < numero_limitador; elemento_nome++) {
-						printf("	O %d nome e  : %s\n", elemento_nome + 1, areas[elemento_nome]);
-					}
-
-					qual_func = 0;
-				}
-				*/
+			
 				else if (qual_func == 4) {
 					//exibir tudo
 					for (int elemento_tudo = 0; elemento_tudo < numero_limitador; elemento_tudo++) {

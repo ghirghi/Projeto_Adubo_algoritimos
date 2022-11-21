@@ -34,9 +34,7 @@ int main(){
 
 3. EXIBIR AO USUÁRIO OS RESULTADOS
 
-void exibir_menu1()
-}
-exibir_menu1(){
+
 
 }
 
@@ -44,15 +42,11 @@ exibir_menu1(){
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
-#include <vector>
-
 
 
 
 void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo[], int resultados[], int total_adubo[])
 {
-	int seleciona_func = 0;
 	int seleciona = 0;
 	/*
 	-------------------------------------------------------------------
@@ -108,17 +102,15 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 		MAPA
 		IF SELECIONA == 1
 			IF QUAL_FUNC == 1
-				exibir_fosforo()
+				exibir_fosforo
 			IF QUAL_FUNC == 2
-				exibir_taxa()
+				exibir_taxa
 			IF QUAL_FUNC == 3
-				exibir_total()
+				exibir_total
+			
 			IF QUAL_FUNC == 4
-				exibir_nomes()
-			IF QUAL_FUNC == 5
-				exibir_tudo()
-			IF QUAL_FUNC == 6
-				VOLTAR MENU 1
+				exibir_tudo
+			
 
 		*/
 
@@ -129,7 +121,7 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 			//LISTAR;
 			printf("Selecione a opcao da lista abaixo digitando o numero da opcao: \n");
 			while (qual_func < 1) {
-				printf("Opcao 1: exibir fosforo \n Opcao 2: exibir taxa \n Opcao 3: exibir_total \n Opcao 4: exibir nomes  \n Opcao 5: exibir tudo \n Opcao 6: sair. \n  \n");
+				printf("Opcao 1: exibir fosforo \n Opcao 2: exibir taxa \n Opcao 3: exibir_total  \n Opcao 4: exibir tudo \n Opcao 5: sair. \n  \n");
 				scanf("%d", &qual_func);
 
 				if (qual_func == 1) {
@@ -157,7 +149,7 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 
 					qual_func = 0;
 				}
-				//TIRAR
+				/*
 				else if (qual_func == 4) {
 					//exibir nomes
 					for (int elemento_nome = 0; elemento_nome < numero_limitador; elemento_nome++) {
@@ -166,7 +158,8 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 
 					qual_func = 0;
 				}
-				else if (qual_func == 5) {
+				*/
+				else if (qual_func == 4) {
 					//exibir tudo
 					for (int elemento_tudo = 0; elemento_tudo < numero_limitador; elemento_tudo++) {
 						printf("	A %d area possui %d de fosforo, iremos adubar %d de kg/hectares, e vai usar %d kg \n", elemento_tudo + 1,fosforo[elemento_tudo], resultados[elemento_tudo], total_adubo[elemento_tudo]);
@@ -174,7 +167,7 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 
 					qual_func = 0;
 				}
-				else if (qual_func == 6) {
+				else if (qual_func == 5) {
 
 
 					exit(0);
@@ -203,8 +196,9 @@ void exibir_menu1(int numero_limitador, char areas[], int tamanho[], int fosforo
 
 
 int main() {
-	const int numero = 500;
-	int numero_limitador;
+	
+	const int numero = 500;//Esse é um limite para o usuário não atingir, pois demoraria muito colocar 500 areas
+	int numero_limitador;//Esse é um numero que o usuario deseja trabalhar
 	int processo = 0;
 	int contador = 0;
 
@@ -223,9 +217,13 @@ int main() {
 
 
 	//Início da interação com o usuário
-	printf("***************************************************************************\n");
-
-	printf("***************************************************************************\n");
+	printf("*******************************\n");
+	printf("*******************************\n");
+	printf("*                           *\n");
+	printf("* SEJA BEM-VINDO AGRICULTOR *\n");
+	printf("*                           *\n");
+	printf("*******************************\n");
+	printf("*******************************\n\n");
 	printf("Ola!!! digite a quantia de areas que deseja trabalhar: \n");
 	scanf("%d", &numero_limitador);
 
@@ -235,13 +233,13 @@ int main() {
 		printf("Informe o nome da area %d:\n ", contador + 1);
 
 		scanf("%s", &bolha_areas);
-		//--------------------------------------
+		//--------------------------------------------------------------------------------
 
 		printf("Digite o tamanho da area %d em hectares:\n ", contador + 1);
 
 		scanf("%d", &bolha_tamanho);
 
-		//-----------------------------------------------------------------
+		//--------------------------------------------------------------------------------
 
 		printf("Digite o valor do fosforo da area %d:\n ", contador + 1);
 		scanf("%d", &bolha_fosforo);
@@ -252,7 +250,7 @@ int main() {
 
 		if ((bolha_fosforo < 1) || (bolha_fosforo > 150)) {
 
-			printf("\nESTE VALOR DE NUTRIENTE E INVALIDO\nINSIRA UM VALOR MAIOR QUE 1 E MENOR QUE 150 \n");
+			printf("\nESTE VALOR DE NUTRIENTE E INVALIDO \n\n INSIRA UM VALOR MAIOR QUE 1 E MENOR QUE 150 \n\n INSIRA APENAS NUMEROS INTEIROS!!! \n\n");
 
 			bolha_areas = 0;
 			bolha_tamanho = 0;
